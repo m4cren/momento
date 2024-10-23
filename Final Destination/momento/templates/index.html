@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Momento</title>
+     <link rel="stylesheet" href="{{url_for('static', filename = 'index_page_design.css')}}">
+</head>
+<body>
+     <div class="container">
+          <h1 class="title">Momento</h1>
+          <div class="btn-container">
+               <a class="buttons" href="#" id="login">Login</a>
+               <a class="buttons" href="#" id="sign-up">Sign Up</a>
+          </div>
+     </div>
+     <div class="popup">
+          <div class="popup-container">
+               <h1>Login</h1>
+               <button id="exit">x</button>
+               <form action="/login" method="POST">
+                    <input placeholder="Enter your email" name="email1" type="email">
+                    <input placeholder="Enter your password" name="password" type="password">
+                    <input type="submit" value="Login">
+               </form>
+          </div>
+     </div>
+     <div class="popup1">
+          <div class="popup1-container">
+               <h1>Sign Up</h1>
+               <button id="exit1">x</button>
+               <form action="/signup" method="POST">
+                    <input placeholder="Enter your email" name="email" type="email">
+                    <input type="text" name="firstname" placeholder="Enter your first name">
+                    <input type="text" name="lastname" placeholder="Enter your last name">
+                    <input type="text" name="address" placeholder="Enter your address">
+                    <input type="text" name="birthday" placeholder="Enter your birthday">
+                    
+                    <input placeholder="Enter your password" name="password" type="password">
+                    <input type="password" placeholder="Confirm your password" name="password1">
+                    <input type="submit" value="Login">
+               </form>
+          </div>
+     </div>
+
+     <script>
+          document.getElementById("sign-up").addEventListener("click", function(){
+               document.querySelector(".popup1").style.display = "flex"
+          })
+          
+          document.getElementById("exit1").addEventListener("click", function(){
+               document.querySelector(".popup1").style.display = "none"
+          })
+          document.getElementById("login").addEventListener("click", function(){
+               document.querySelector(".popup").style.display = "flex"
+          })
+          
+          document.getElementById("exit").addEventListener("click", function(){
+               document.querySelector(".popup").style.display = "none"
+          })
+     </script>
+</body>
+</html>
